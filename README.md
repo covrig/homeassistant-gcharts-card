@@ -4,6 +4,8 @@
 
 KNOWN PROBLEMS: the code could be cleaner, the PieChart needs a bit more work, the more-info card is disabled with a trick...
 
+NO NEED TO RESTART HASS EVERY TIME YOU CHANGE AN OPTION. TO TEST JUST CLEAR YOUR CACHE OR OPEN AFTER EACH CHANGE A NEW INCONGNITO WINDOW.
+
 I decided not creata config options under the `customize` since I will limit the configuration options.
 I will work in adding all chart types. Maybe others will contribute.
 ## Features
@@ -77,7 +79,29 @@ Main idea.
         ...
       ]);
  ```
-
+ 3. Lots of options to change (a lot more can be added):
+ ```
+      var options = {
+        title: "Instant power in W",
+        height: 300,                                     //chart heigh in pixels
+        bar: {groupWidth: '69%'},                        //bar/column width - 69% is the golden ratio
+        legend: { position: 'none'},                     //if enabled the chartArea option should be modified
+        titleTextStyle: {fontSize: 13, bold: false},
+        chartArea: {left:35,top:25,right: 5, width:'100%',height:'82%'},
+        tooltip: {trigger: 'selection'},                // 'focus'/'selection'/'none'
+        vAxis: {minorGridlines: {count: 2, color: '#F4F4F4'}, gridlines: {count: 6}},       //for the column chart 
+        hAxis: {minorGridlines: {count: 2, color: '#F4F4F4'}, gridlines: {count: 6}},       //font the bar chart
+        // just a commnent for the vAxis/hAxis - if gridlines: {count: x} is set to x=-1(auto) the axis maximum value will change and the chart bars will be most of the time static. I recomend setting it to 5 or more.
+        dataOpacity: 0.9,
+        fontSize: 11,                                   //font size throughout the chart
+        pieHole: 0.4,                                   //from pie to donut - comment or set to 0 to change to pie 
+        pieSliceText: 'label',                          //'percentage', 'value' ,'label' ,'none'
+        pieSliceTextStyle: {fontSize:10},
+        is3D: false,                                     // set to true for 3D pie chart
+        backgroundColor: { fill: 'white' },
+        //explorer: {}                                   // uncomment to enable pan and zoom in the chart - right click resets
+      };
+ ```
 ## Changelog
 ```
 Version 20180207:
