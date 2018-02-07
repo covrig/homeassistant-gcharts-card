@@ -1,6 +1,6 @@
 # Google Charts state card for [Home Assistant](https://home-assistant.io)
 
-<img src="https://i.imgur.com/XSTSlds.gif" height="500">
+<img src="https://i.imgur.com/XSTSlds.gif" height="350">
 
 KNOWN PROBLEMS: the code could be cleaner, the PieChart needs a bit more work. 
 
