@@ -6,7 +6,7 @@ KNOWN PROBLEMS: the code could be cleaner, the PieChart needs a bit more work, t
 
 NO NEED TO RESTART HASS EVERY TIME YOU CHANGE AN OPTION. TO TEST YOUR CHANGES JUST CLEAR YOUR CACHE OR USE A NEW INCONGNITO WINDOW (AFTER EACH CHANGE).
 
-I decided not creata config options under the `customize` since I will limit the configuration options.
+I didn't create any config options under the `customize` section since the option list is extremly long.
 I will work in adding all chart types. Maybe others will contribute.
 ## Features
 * Updates in real time;
