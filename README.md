@@ -1,4 +1,4 @@
-# Extra Google charts for [Home Assistant](https://home-assistant.io)
+# Google Charts state card for [Home Assistant](https://home-assistant.io)
 
 <img src="https://i.imgur.com/XSTSlds.gif" height="500">
 
