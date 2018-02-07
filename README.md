@@ -3,7 +3,7 @@
 <img align="left" src="https://i.imgur.com/XSTSlds.gif" height="350">
 
 ***
-KNOWN PROBLEMS: the code could be cleaner, the PieChart needs a bit more work, the more-info card is disabled with a trick, only one chart now (more could be created, go to the end of this page)...
+KNOWN PROBLEMS: the code could be cleaner, the PieChart needs a bit more work, the more-info card is disabled with a trick, a bit complicated to add more than one chart (details at the end of this page)...
 
 _No need to restart hass every time you change an option. To test your changes just clear your cache or use a new incongnito window (after each change).._
 
@@ -107,7 +107,7 @@ Main idea.
         //explorer: {}                                   // uncomment to enable pan and zoom in the chart - right click resets
       };
  ```
-## How to add more then one chart to Home Assistant
+## How to add more then one chart
 * Duplicate `state-card-gchart.html`;
 * Change the name of `state-card-gchart.html` to `state-card-whateveryouwant.html`;
 * Inside `state-card-whateveryouwant.html` rename `state-card-gchart` to `state-card-whateveryouwant`(it appears to times);
