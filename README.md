@@ -3,7 +3,7 @@
 <img src="https://i.imgur.com/XSTSlds.gif" height="500">
 
 KNOWN PROBLEMS: the code could be cleaner, the PieChart needs a bit more work. 
-
+I decided not creata config options under the `customize` since I will limit the configuration options.
 I will work in adding all chart types. Maybe others will contribute.
 ## Features
 * Updates in real time;
