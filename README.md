@@ -2,7 +2,7 @@
 
 <img align="left" src="https://i.imgur.com/XSTSlds.gif" height="350">
 
-
+***
 KNOWN PROBLEMS: the code could be cleaner, the PieChart needs a bit more work, the more-info card is disabled with a trick...
 
 _NO NEED TO RESTART HASS EVERY TIME YOU CHANGE AN OPTION. TO TEST YOUR CHANGES JUST CLEAR YOUR CACHE OR USE A NEW INCONGNITO WINDOW (AFTER EACH CHANGE)._
@@ -10,7 +10,7 @@ _NO NEED TO RESTART HASS EVERY TIME YOU CHANGE AN OPTION. TO TEST YOUR CHANGES J
 I didn't create any config options under the `customize` section since the option list is extremly long.
 
 I will work in adding all chart types. Maybe others will contribute.
-
+***
 
 
 ## Features
