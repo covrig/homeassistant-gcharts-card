@@ -2,7 +2,7 @@
 
 <img src="https://i.imgur.com/XSTSlds.gif" height="350">
 
-KNOWN PROBLEMS: the code could be cleaner, the PieChart needs a bit more work. 
+KNOWN PROBLEMS: the code could be cleaner, the PieChart needs a bit more work, the more-info card is disabled with a trick...
 
 I decided not creata config options under the `customize` since I will limit the configuration options.
 I will work in adding all chart types. Maybe others will contribute.
