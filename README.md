@@ -10,7 +10,9 @@ I will work in adding all chart types. Maybe others will contribute.
 * Updates in real time;
 * Sortable by name or value;
 * Chart type can be changed on the fly (3 default options: column, bar, piechart - more can ba added: read the comments in the `state-card-gchart.html` file);
-* Highly customizable (number of entities, styling etc.). Visit [Google Charts](https://developers.google.com/chart/interactive/docs/gallery) for more information and options ([ColumnChart](https://developers.google.com/chart/interactive/docs/gallery/columnchart), [BarChart](https://developers.google.com/chart/interactive/docs/gallery/barchart), [PieChart](https://developers.google.com/chart/interactive/docs/gallery/piechart)).
+* Supports one more more entities (recomended to compare: power, temperature, humidity, mold etc.).
+* Could be also use as a weather forecast (disabling some of the options might be needed).
+* Highly customizable (styling, axes types, annotations etc.). Visit [Google Charts](https://developers.google.com/chart/interactive/docs/gallery) for more information and options ([ColumnChart](https://developers.google.com/chart/interactive/docs/gallery/columnchart), [BarChart](https://developers.google.com/chart/interactive/docs/gallery/barchart), [PieChart](https://developers.google.com/chart/interactive/docs/gallery/piechart)).
 
 ## Installation
 * Download `/www/custom_ui/state-card-gchart.html` to `<your-hass-configuration-dir>/www/custom_ui/` (create the folder structure if you don't have it - mind the permissions)
