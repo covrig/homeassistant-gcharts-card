@@ -4,7 +4,7 @@
 
 KNOWN PROBLEMS: the code could be cleaner, the PieChart needs a bit more work, the more-info card is disabled with a trick...
 
-NO NEED TO RESTART HASS EVERY TIME YOU CHANGE AN OPTION. TO TEST JUST CLEAR YOUR CACHE OR OPEN AFTER EACH CHANGE A NEW INCONGNITO WINDOW.
+NO NEED TO RESTART HASS EVERY TIME YOU CHANGE AN OPTION. TO TEST YOUR CHANGES JUST CLEAR YOUR CACHE OR USE A NEW INCONGNITO WINDOW (AFTER EACH CHANGE).
 
 I decided not creata config options under the `customize` since I will limit the configuration options.
 I will work in adding all chart types. Maybe others will contribute.
