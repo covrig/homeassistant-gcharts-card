@@ -6,9 +6,9 @@ KNOWN PROBLEMS: the code could be cleaner, the PieChart needs a bit more work.
 
 I will work in adding all chart types. Maybe others will contribute.
 ## Features
-* Updates in real time
-* Sortable by name or value
-* Chart type can be changed (3 default options: column, bar, piechart - more can ba added: read the comments in the `state-card-gchart.html` file)
+* Updates in real time;
+* Sortable by name or value;
+* Chart type can be changed on the fly (3 default options: column, bar, piechart - more can ba added: read the comments in the `state-card-gchart.html` file);
 * Highly customizable (number of entities, styling etc.). Visit [Google Charts](https://developers.google.com/chart/interactive/docs/gallery) for more information and options ([ColumnChart](https://developers.google.com/chart/interactive/docs/gallery/columnchart), [BarChart](https://developers.google.com/chart/interactive/docs/gallery/barchart), [PieChart](https://developers.google.com/chart/interactive/docs/gallery/piechart)).
 
 ## Installation
