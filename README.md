@@ -3,7 +3,7 @@
 <img align="left" src="https://i.imgur.com/XSTSlds.gif" height="350">
 
 ***
-KNOWN PROBLEMS: the code could be cleaner, the PieChart needs a bit more work, the more-info card is disabled with a trick, only one chart now (more can be created, read below)...
+KNOWN PROBLEMS: the code could be cleaner, the PieChart needs a bit more work, the more-info card is disabled with a trick, only one chart now (more could be created, go to the end of this page)...
 
 _No need to restart hass every time you change an option. To test your changes just clear your cache or use a new incongnito window (after each change).._
 
