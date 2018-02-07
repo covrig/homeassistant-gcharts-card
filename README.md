@@ -33,11 +33,11 @@ sensor:
 ```yaml
 group:
   group_gchart:
-    name: ' '   > in this format the iframe will not have a name above
+    name: ' '   > in this format the chart will not have a name above
     entities:
       - sensor.gchart
   group_ghcart2:
-    name: 'Name'   > with a name
+    name: 'Name'   > with a name (large group name, not recommended)
     entities:
       - sensor.gchart2
 ```
