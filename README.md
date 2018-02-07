@@ -44,8 +44,8 @@ group:
       custom_ui_state_card: state-card-gchart
 
  ```
- * Customize even your newly created sensor by edititing the `state-card-gchart.html` file:
-**The file is self explanatory.**
+ * Customize even your newly created sensor by edititing the `state-card-gchart.html` file (more comments in the file):
+
 Main idea.
 1. Add your entities as variables in the designated section.
 ```
