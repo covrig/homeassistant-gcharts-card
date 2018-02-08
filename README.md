@@ -37,8 +37,6 @@ sensor:
     sensors:
       gchart:
         value_template: gchart
-      gchart2:
-        value_template: gchart
 ```
 * Add your sensor to a group.. E.g.:
 ```yaml
@@ -47,10 +45,13 @@ group:
     name: ' '   > in this format the chart will not have a name above
     entities:
       - sensor.gchart
-  group_ghcart2:
+```
+or
+```
+  group_ghcart:
     name: 'Name'   > with a name (large group name, not recommended)
     entities:
-      - sensor.gchart2
+      - sensor.gchart
 ```
 * Convert your newly created sensor to a Google chart in the `customize` section or your `customize.yaml` file:
 
@@ -58,11 +59,8 @@ group:
   customize:
     sensor.gchart:
       custom_ui_state_card: state-card-gchart
-    sensor.gchart2:
-      custom_ui_state_card: state-card-gchart
-
  ```
- * Customize even your newly created sensor by edititing the `state-card-gchart.html` file (more comments in the file):
+ * Customize even more your newly created sensor by edititing the `state-card-gchart.html` file (more comments in the file):
 
 Main idea.
 1. Add your entities as variables in the designated section.
@@ -118,7 +116,8 @@ Main idea.
 ## Changelog
 ```
 Version 20180208:
-Some code cleaning.
+Some code cleaning. 
+Updated parseInt() to parseFloat().
 ```
 <p align="center">
 <img src="https://i.imgur.com/HlveuIS.jpg" height="350">
