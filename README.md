@@ -38,7 +38,7 @@ sensor:
       gchart:
         value_template: gchart
 ```
-* Add your sensor to a group.. E.g.:
+* Add the sensor to your group or a new one.. E.g.:
 ```yaml
 group:
   group_gchart:
