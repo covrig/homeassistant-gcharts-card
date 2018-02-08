@@ -80,15 +80,15 @@ This part redraws the chart on state change.
 Add here your entities as variables. The variable name is yours to choose. Proceed to add new lines to the data array below.
 -----------------------------------------*/
 
-      var router = parseInt(this.hass.states['sensor.router_area_power'].state);
-      var fridge = parseInt(this.hass.states['sensor.fridge_power'].state);
-      var laptop = parseInt(this.hass.states['sensor.laptop_power'].state);
-      var boiler = parseInt(this.hass.states['sensor.boiler_power'].state);
-      var tv = parseInt(this.hass.states['sensor.tv_power'].state);
-      var pc = parseInt(this.hass.states['sensor.pc_power'].state);
-      var oven = parseInt(this.hass.states['sensor.oven_power'].state);
-      var washer = parseInt(this.hass.states['sensor.washer_power'].state);
-      var other = parseInt(this.hass.states['sensor.power_other'].state);
+      var router = parseFloat(this.hass.states['sensor.router_area_power'].state);
+      var fridge = parseFloat(this.hass.states['sensor.fridge_power'].state);
+      var laptop = parseFloat(this.hass.states['sensor.laptop_power'].state);
+      var boiler = parseFloat(this.hass.states['sensor.boiler_power'].state);
+      var tv = parseFloat(this.hass.states['sensor.tv_power'].state);
+      var pc = parseFloat(this.hass.states['sensor.pc_power'].state);
+      var oven = parseFloat(this.hass.states['sensor.oven_power'].state);
+      var washer = parseFloat(this.hass.states['sensor.washer_power'].state);
+      var other = parseFloat(this.hass.states['sensor.power_other'].state);
 
 /*-----------------------------------------
 Add or remove new lines.
