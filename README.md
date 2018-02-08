@@ -62,7 +62,7 @@ or
  ```
  * Customize even more your newly created sensor by edititing the `state-card-gchart.html` file (more comments in the file):
 
-Main idea.
+**Main idea.**
 1. Add your entities as variables in the designated section.
 ```
       var pc = parseFloat(this.hass.states['sensor.pc_power'].state);         \\parseInt() is also an option
