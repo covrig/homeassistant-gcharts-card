@@ -72,7 +72,7 @@ Main idea.
       ...
  ```
  2. Add/delete rows to/from your `data` array (mind the comma after the each row):
- ```
+ ```javascript
        var data = google.visualization.arrayToDataTable([
         ['Device', 'Power',{ role: 'annotation' },  { role: 'style' }],
         ['PC', pc, pc, '#e31a1c'],
@@ -83,7 +83,7 @@ Main idea.
       ]);
  ```
  3. Lots of options to change (a lot more can be added):
- ```
+ ```javascript
       var options = {
         title: "Instant power in W",
         height: 300,                                     //chart heigh in pixels
@@ -116,8 +116,8 @@ Main idea.
 ## Changelog
 ```
 Version 20180208:
-Some code cleaning. 
-Updated parseInt() to parseFloat().
+- [x] Some code cleaning. 
+- [x] Updated parseInt() to parseFloat().
 ```
 <p align="center">
 <img src="https://i.imgur.com/HlveuIS.jpg" height="350">
