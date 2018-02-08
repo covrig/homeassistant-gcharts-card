@@ -1,10 +1,9 @@
 <!--
 Additional Google charts for Home Assistant
-.
+--
 Visit  https://developers.google.com/chart/ for more information, chart options, new charts etc.
-.
-https://github.com/covrig/homeassistant-gcharts-card
-version 20180207
+--
+version 20180208
 -->
 
 <link rel='import' href='../../bower_components/google-apis/google-legacy-loader.html'>
@@ -55,32 +54,17 @@ class Chart extends Polymer.Element {
           type: Object,
           observer: 'Obs'
         },
-        stateObj: {
-          type: Object,
-        },
-        config: {
-          type: Object,
-          computed: 'computeConfig(stateObj)',
-        },
     };
-  }
-
-  computeConfig(stateObj) {     
-    return stateObj.attributes.config;
-  }
-  _toStr(obj) {
-    return JSON.stringify(obj);
   }
 
 /*-----------------------------------------
 This part redraws the chart on state change.
 -----------------------------------------*/
-  Obs(newHass, oldHass) {
+  Obs() {
 
       if (!this.hass) {
         return;
       }
-
       if (!window.google || !window.google.visualization) {
         return;
       }
@@ -92,7 +76,6 @@ This part redraws the chart on state change.
     }
 
   drawChart() {
-
 /*-----------------------------------------
 Add here your entities as variables. The variable name is yours to choose. Proceed to add new lines to the data array below.
 -----------------------------------------*/
@@ -137,7 +120,7 @@ All kind of options for each type of chart can be found on the Google charts web
 
       var options = {
         title: "Instant power in W",
-        height: 350,                                     //chart heigh in pixels
+        height: 300,                                     //chart heigh in pixels
         bar: {groupWidth: '69%'},                        //bar/column width - 69% is the golden ratio
         legend: { position: 'none'},                     //if enabled the chartArea option should be modified
         titleTextStyle: {fontSize: 13, bold: false},
