@@ -79,7 +79,7 @@ Main idea.
         ['Device', 'Power',{ role: 'annotation' },  { role: 'style' }],
         ['PC', pc, pc, '#e31a1c'],
         ['Oven', oven, oven, '#fdbf6f'],
-        ['Washer', washer, washer, 'color: #ff7f00' ],
+        ['Washer', washer, washer, '#ff7f00' ],
         ['Other', other, other, '#cab2d6'],
         ...
       ]);
