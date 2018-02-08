@@ -3,7 +3,7 @@
 <img align="left" src="https://i.imgur.com/XSTSlds.gif" height="350">
 
 ***
-KNOWN PROBLEMS: the code could be cleaner, the PieChart needs a bit more work, the more-info card is disabled with a trick, a bit complicated to add more than one chart (details at the end of this page)...
+KNOWN PROBLEMS: the code could be cleaner, the PieChart needs a bit more work, the more-info card is disabled with a trick, a bit tricky to add more than one chart ([details at the end of this page](https://github.com/covrig/homeassistant-gcharts-card/blob/master/README.md#how-to-add-more-then-one-chart))...
 
 _No need to restart hass every time you change an option. To test your changes just clear your cache or use a new incongnito window (after each change).._
 
