@@ -67,10 +67,10 @@ group:
 Main idea.
 1. Add your entities as variables in the designated section.
 ```
-      var pc = parseInt(this.hass.states['sensor.pc_power'].state);
-      var oven = parseInt(this.hass.states['sensor.oven_power'].state);
-      var washer = parseInt(this.hass.states['sensor.washer_power'].state);
-      var other = parseInt(this.hass.states['sensor.power_other'].state);
+      var pc = parseFloat(this.hass.states['sensor.pc_power'].state);         \\parseInt() is also an option
+      var oven = parseFloat(this.hass.states['sensor.oven_power'].state);
+      var washer = parseFloat(this.hass.states['sensor.washer_power'].state);
+      var other = parseFloat(this.hass.states['sensor.power_other'].state);
       ...
  ```
  2. Add/delete rows to/from your `data` array (mind the comma after the each row):
@@ -120,3 +120,4 @@ Main idea.
 Version 20180208:
 Some code cleaning.
 ```
+<div style="text-align:center"><img src="https://i.imgur.com/HlveuIS.jpg" height="350"></div>
