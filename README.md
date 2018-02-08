@@ -117,6 +117,6 @@ Main idea.
 
 ## Changelog
 ```
-Version 20180207:
-Start
+Version 20180208:
+Some code cleaning.
 ```
