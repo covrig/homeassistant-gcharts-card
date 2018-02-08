@@ -120,4 +120,6 @@ Main idea.
 Version 20180208:
 Some code cleaning.
 ```
-<div style="text-align:center"><img src="https://i.imgur.com/HlveuIS.jpg" height="350"></div>
+<p align="center">
+<img src="https://i.imgur.com/HlveuIS.jpg" height="350">
+</p>
