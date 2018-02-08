@@ -42,7 +42,7 @@ sensor:
 ```yaml
 group:
   group_gchart:
-    name: ' '   > in this format the chart will not have a name above
+    name: ' '   > in this format the chart will not have a name above (recommeded)
     entities:
       - sensor.gchart
 ```
