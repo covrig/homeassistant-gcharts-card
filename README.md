@@ -119,7 +119,9 @@ or
 
 ## Changelog
 ```
-Version 20180208:
+2018.Feb.08:
 - [x] Some code cleaning. 
 - [x] Updated parseInt() to parseFloat().
+2019.Jan.09:
+- [x] Added websocket version. Will go obsolete when the legacy password will be removed. Same approach for installation inside Home Assistant. The html will also work independetly - without Home Assistant. Just add your IP and legacy password.
 ```
