@@ -1,25 +1,11 @@
 # WebSocket API Google Charts for [Home Assistant](https://home-assistant.io)
 
-<img align="left" src="https://i.imgur.com/XSTSlds.gif" height="350">
+<img src="https://i.imgur.com/XSTSlds.gif" height="350">
 
 ***
 KNOWN PROBLEMS: the code could be cleaner, the PieChart needs a bit more work...
 
 _No need to restart hass every time you change an option. To test your changes just refresh the page - clear your cache or use a new incongnito window if no change is observed_
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ***
 
 ## Features
