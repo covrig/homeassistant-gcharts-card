@@ -22,7 +22,7 @@ _No need to restart hass every time you change an option. To test your changes j
 </p>
 
 ## Installation
-* Download `/www/custom_ui/googlechart.html` to `<your-hass-configuration-dir>/www/custom_ui/` (create the folder structure if you don't have it - mind the permissions)
+* Download `/www/googlechart.html` to `<your-hass-configuration-dir>/www/` (create the folder structure if you don't have it - mind the permissions)
 * Add it to your lovelace configuration e.g.:
 ```yaml
       - type: iframe
