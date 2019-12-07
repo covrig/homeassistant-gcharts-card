@@ -6,6 +6,20 @@
 KNOWN PROBLEMS: the code could be cleaner, the PieChart needs a bit more work...
 
 _No need to restart hass every time you change an option. To test your changes just refresh the page - clear your cache or use a new incongnito window if no change is observed_
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ***
 
 ## Features
