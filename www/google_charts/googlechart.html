@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <script src="loader.js"></script>
+    <script src='lodash.min.js'></script>
+    <script src='jquery.min.js'></script>
+    <style>
+     #chart {width: 100%; min-height: 315px;}
+     #status {position:relative; float:right; z-index:100;}
+    </style>
+    <script type="text/javascript">
+      var chartrefreshtime = 5000;
+      window.setInterval(function(){init()}, chartrefreshtime);
+      function make_options(max) {
+          return {
+            title: "Power [W]",
+            bar: {groupWidth: '60%'},
+            legend: { position: 'none'},
+            titleTextStyle: {fontSize: 13, bold: false},
+            chartArea: {left:35,top:25,right: 5, width:'100%',height:'82%'},
+            tooltip: {trigger: 'selection'},
+            vAxis: {minorGridlines: {count: 2, color: '#F4F4F4'}, gridlines: {count: 6}, viewWindow: {min: 0}},
+            hAxis: {minorGridlines: {count: 2, color: '#F4F4F4'}, gridlines: {count: 6}, viewWindow: {min: 0}},
+            dataOpacity: 0.9,
+            fontSize: 11,
+            pieHole: 0.4,
+            pieSliceText: 'label',
+            pieSliceTextStyle: {fontSize:10},
+            is3D: false,
+            backgroundColor: { fill: 'white' },
+            animation:{duration: 300,easing: 'out',},
+            minorTicks: 5,
+            max: max,
+          };
+      }
+      var json = {"a": {}};
+      // Delete, change or add more variables here:
+      var router, fridge, laptop, boiler, tv, pc, oven, washer, other, monitor;
+      function init() {
+        
+        const status = document.getElementById('status');
+        google.charts.load('current', {'packages':['gauge', 'corechart', 'bar']});
+        google.charts.setOnLoadCallback(drawChart);
+//-----------------
+        $(document).ready(function() {
+            // Add your HASS URL here
+            ws = new WebSocket('wss://your_ip_or_url/api/websocket');
+            ws.addEventListener('open', function (event) {
+                // Add your Long-Lived-Access-Token here
+                ws.send(JSON.stringify({"type": "auth","access_token": "Long-Lived-Access-Token"}));
+                ws.send('{"id": 19, "type": "get_states"}');
+            });
+            ws.onopen = function() {console.log('Websocket connected...');};
+            ws.onclose = function() {console.log('Socket connection closed normally!');};
+            ws.onerror = function(e) { console.log("WebSocket Error: " , e);};
+            ws.onmessage = function(event) {
+                console.log('Receiving data');
+                <!-- console.log(event.data); -->
+                if (event.data.length > 2000) {
+                    // Delete, change or add more variables here:
+                    window.router = JSON.parse(event.data)["result"].filter(function (el) { return el.entity_id == "sensor.router_area_power"})[0].state;
+                    window.fridge = JSON.parse(event.data)["result"].filter(function (el) { return el.entity_id == "sensor.fridge_power"})[0].state;
+                    window.laptop = JSON.parse(event.data)["result"].filter(function (el) { return el.entity_id == "sensor.laptop_power"})[0].state;
+                    window.boiler = JSON.parse(event.data)["result"].filter(function (el) { return el.entity_id == "sensor.boiler_power"})[0].state;
+                    window.tv = JSON.parse(event.data)["result"].filter(function (el) { return el.entity_id == "sensor.tv_power"})[0].state;
+                    window.pc = JSON.parse(event.data)["result"].filter(function (el) { return el.entity_id == "sensor.pc_power"})[0].state;
+                    window.oven = JSON.parse(event.data)["result"].filter(function (el) { return el.entity_id == "sensor.oven_power"})[0].state;
+                    window.washer = JSON.parse(event.data)["result"].filter(function (el) { return el.entity_id == "sensor.washer_power"})[0].state;
+                    window.other = JSON.parse(event.data)["result"].filter(function (el) { return el.entity_id == "sensor.power_other"})[0].state;
+                    window.monitor = JSON.parse(event.data)["result"].filter(function (el) { return el.entity_id == "sensor.fan_power"})[0].state;
+                    ws.close();
+                    }
+                    render();
+ 
+            };
+        });
+//-----------------
+        function render() {
+          var error = false;
+          _.forEach(json, function(graph, key) {
+            try {
+
+              //Set value // Delete, change or add more variables here:
+              graph["data"].setValue(0, 1, router);
+              graph["data"].setValue(1, 1, fridge);
+              graph["data"].setValue(2, 1, laptop);
+              graph["data"].setValue(3, 1, boiler);
+              graph["data"].setValue(4, 1, tv);
+              graph["data"].setValue(5, 1, pc);
+              graph["data"].setValue(6, 1, washer);
+              graph["data"].setValue(7, 1, oven);
+              graph["data"].setValue(8, 1, other);
+              graph["data"].setValue(9, 1, monitor);
+
+              //Set annotation // Delete, change or add more variables here:
+              graph["data"].setValue(0, 2, router);
+              graph["data"].setValue(1, 2, fridge);
+              graph["data"].setValue(2, 2, laptop);
+              graph["data"].setValue(3, 2, boiler);
+              graph["data"].setValue(4, 2, tv);
+              graph["data"].setValue(5, 2, pc);
+              graph["data"].setValue(6, 2, washer);
+              graph["data"].setValue(7, 2, oven);
+              graph["data"].setValue(8, 2, other);
+              graph["data"].setValue(9, 2, monitor);
+              //Set name // Delete, change or add more variables here:
+              graph["data"].setValue(0, 0, 'Router Area');
+              graph["data"].setValue(1, 0, 'Fridge');
+              graph["data"].setValue(2, 0, 'Laptop');
+              graph["data"].setValue(3, 0, 'Boiler');
+              graph["data"].setValue(4, 0, 'TV');
+              graph["data"].setValue(5, 0, 'PC');
+              graph["data"].setValue(6, 0, 'Washer');
+              graph["data"].setValue(7, 0, 'Oven');
+              graph["data"].setValue(8, 0, 'Other');
+              graph["data"].setValue(9, 0, 'Monitor');
+              //Set color
+              graph["data"].setValue(0, 3, '#00c853');
+              graph["data"].setValue(1, 3, '#ffd600');
+              graph["data"].setValue(2, 3, '#d500f9');
+              graph["data"].setValue(3, 3, '#1f78b4');
+              graph["data"].setValue(4, 3, '#00897b');
+              graph["data"].setValue(5, 3, '#e53935');
+              graph["data"].setValue(6, 3, '#ad1457');
+              graph["data"].setValue(7, 3, '#fdbf6f');
+              graph["data"].setValue(8, 3, '#1e88e5');
+              graph["data"].setValue(9, 3, '#00BCD4');
+ 
+              var b = document.getElementById("sortname");
+              var sortname = eval(b.options[b.selectedIndex].value);
+
+              var c = document.getElementById("sortorder");
+              var sortorder = eval(c.options[c.selectedIndex].value);
+
+              graph["data"].sort([{column: sortname, desc: sortorder}]);
+              graph["chart"].draw(graph["data"], make_options(graph["max"]));
+            } catch(e) {
+              status.innerHTML = "Error reading state for key: " + key;
+              error = true;
+            }
+            if(!error) status.innerHTML = "Updated: " + (new Date()).toLocaleString();
+          });
+        }
+
+        function drawChart() {
+
+          _.forEach(json, function(graph) {
+            graph.data = google.visualization.arrayToDataTable([
+           ['Label', 'Value',{ role: 'annotation' },  { role: 'style' }], 
+           ['a', -1, 'Error', 'a'], 
+           ['a', -1, 'Error', 'a'], 
+           ['a', -1, 'Error', 'a'], 
+           ['a', -1, 'Error', 'a'], 
+           ['a', -1, 'Error', 'a'], 
+           ['a', -1, 'Error', 'a'], 
+           ['a', -1, 'Error', 'a'], 
+           ['a', -1, 'Error', 'a'], 
+           ['a', -1, 'Error', 'a'], 
+           ['a', -1, 'Error', 'a']
+          ]);
+           var a = document.getElementById("selectchartType");
+           var chartType = a.options[a.selectedIndex].value;
+           
+           graph.chart = new google.visualization[chartType](document.getElementById('chart'));
+          });
+       }
+    }
+    </script>
+</head>
+
+<body onload="init();">
+<span id='status' style="font-size:50%;">Connecting...</span>
+<div id='chart'></div>
+<div id="selectforms" on-tap='cardTapped'>
+<select id="selectchartType" onchange='init()'>
+  <option value="ColumnChart">Columns</option>
+  <option value="BarChart">Bars</option>
+  <option value="PieChart">Donut</option>
+</select>
+<select id="sortorder" onchange='init()'>
+  <option value="true">Desc</option>
+  <option value="false">Asc</option>
+</select>
+<select id="sortname" onchange='init()'>
+  <option value="1">Value</option>
+  <option value="0">Name</option>
+</select>
+</div>
+</table>
+</body>
+</html>
