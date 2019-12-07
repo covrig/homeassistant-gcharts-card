@@ -9,6 +9,7 @@ _No need to restart hass every time you change an option. To test your changes j
 ***
 
 ## Features
+* **Can be used standalone of HASS**;
 * Updates in real time;
 * Sortable by name or value;
 * Chart type can be changed on the fly (3 default options: column, bar, piechart - more can ba added;
