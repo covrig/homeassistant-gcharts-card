@@ -8,7 +8,6 @@ KNOWN PROBLEMS: the code could be cleaner, the PieChart needs a bit more work...
 _No need to restart hass every time you change an option. To test your changes just refresh the page - clear your cache or use a new incongnito window if no change is observed_
 ***
 
-
 ## Features
 * Updates in real time;
 * Sortable by name or value;
@@ -31,7 +30,14 @@ _No need to restart hass every time you change an option. To test your changes j
         aspect_ratio: 90%
 ```
 **Main idea.**
-1. Add your entities as variables in the designated sections.
+1. Add your HASS URL and Long-Lived Access Token (get it from your profile).
+```javascript
+       ws = new WebSocket('wss://your_ip_or_url/api/websocket');
+```
+```javascript
+       ws.send(JSON.stringify({"type": "auth","access_token": "Long-Lived-Access-Token"}));
+ ```
+2. Add your entities as variables in the designated sections.
 ```javascript
        var router, fridge, laptop, boiler, tv, pc, oven, washer, other, monitor;
 ```
@@ -41,7 +47,7 @@ _No need to restart hass every time you change an option. To test your changes j
        window.laptop = JSON.parse(event.data)["result"].filter(function (el) { return el.entity_id == "sensor.laptop_power"})[0].state;
        ...
  ```
- 2. Add/delete rows to/from the multiple sections (mind the ; after the each row):
+ 3. Add/delete rows to/from the multiple sections (mind the ; after the each row):
  ```javascript
         //Set value
         graph["data"].setValue(0, 1, router);
@@ -60,7 +66,7 @@ _No need to restart hass every time you change an option. To test your changes j
          graph["data"].setValue(1, 0, 'Fridge');
          ...
  ```
- 3. Lots of options to change (a lot more can be added):
+ 4. Lots of options to change (a lot more can be added):
  ```javascript
       var options = {
         title: "Instant power in W",
@@ -90,11 +96,11 @@ _No need to restart hass every time you change an option. To test your changes j
 
 ## Changelog
 ```
-2019.Dec.07
-- Removed old code and added webscoket version (works with HASS > 0.102) 
 2018.Feb.08:
-- [x] Some code cleaning. 
-- [x] Updated parseInt() to parseFloat().
+- Some code cleaning. 
+- Updated parseInt() to parseFloat().
 2019.Jan.09:
-- [x] Added websocket version. Will go obsolete when the legacy password will be removed. Same approach for installation inside Home Assistant. The html will also work independetly - without Home Assistant. Just add your IP and legacy password.
+- Added websocket version. Will go obsolete when the legacy password will be removed. Same approach for installation inside Home Assistant. The html will also work independetly - without Home Assistant. Just add your IP and legacy password.
+2019.Dec.07
+- Removed old code and added websocket version with Long-Lived Access Tokens (works with HASS > 0.102) 
 ```
