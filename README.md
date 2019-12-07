@@ -1,4 +1,4 @@
-# Google Charts state card for [Home Assistant](https://home-assistant.io)
+# WebSocket API Google Charts for [Home Assistant](https://home-assistant.io)
 
 <img align="left" src="https://i.imgur.com/XSTSlds.gif" height="350">
 
