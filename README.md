@@ -1,7 +1,7 @@
 # WebSocket API Google Charts for [Home Assistant](https://home-assistant.io)
-
+<p align="center">
 <img src="https://i.imgur.com/XSTSlds.gif" height="350">
-
+</p>
 ***
 KNOWN PROBLEMS: the code could be cleaner, the PieChart needs a bit more work...
 
