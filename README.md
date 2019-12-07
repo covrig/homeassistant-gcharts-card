@@ -48,7 +48,6 @@ _No need to restart hass every time you change an option. To test your changes j
        window.laptop = JSON.parse(event.data)["result"].filter(function (el) { return el.entity_id == "sensor.laptop_power"})[0].state;
        ...
  ```
- 3. Add/delete rows to/from the multiple sections (mind the ; after the each row):
  ```javascript
         //Set value
         graph["data"].setValue(0, 1, router);
@@ -67,7 +66,7 @@ _No need to restart hass every time you change an option. To test your changes j
          graph["data"].setValue(1, 0, 'Fridge');
          ...
  ```
- 4. Lots of options to change (a lot more can be added):
+ 3. Lots of options to change (a lot more can be added):
  ```javascript
       var options = {
         title: "Instant power in W",
@@ -90,6 +89,10 @@ _No need to restart hass every time you change an option. To test your changes j
         //explorer: {}                                   // uncomment to enable pan and zoom in the chart - right click resets
       };
  ```
+4. Set a chart refresh period in milliseconds.
+```javascript
+       var chartrefreshtime = 5000;
+```
 ## How to add more then one chart
 * Duplicate `googlechart.html`;
 * Change options inside new file;
