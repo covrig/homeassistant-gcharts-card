@@ -1,4 +1,4 @@
-# WebSocket API Google Charts for [Home Assistant](https://home-assistant.io)
+# WebSocket API Google Charts for [Home Assistant](https://home-assistant.io) > 0.102
 <p align="center">
 <img src="https://i.imgur.com/XSTSlds.gif" height="350">
 </p>
