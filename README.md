@@ -15,7 +15,7 @@ _No need to restart hass every time you change an option. To test your changes j
 * Supports one more more entities (recomended to compare: power, temperature, humidity, mold etc.).
 * Could be also use as a weather forecast (disabling some of the options might be needed).
 * Highly customizable (styling, axes types, annotations etc.). Visit [Google Charts](https://developers.google.com/chart/interactive/docs/gallery) for more information and options ([ColumnChart](https://developers.google.com/chart/interactive/docs/gallery/columnchart), [BarChart](https://developers.google.com/chart/interactive/docs/gallery/barchart), [PieChart](https://developers.google.com/chart/interactive/docs/gallery/piechart)).
-* The height of the chart can be set in the `options` section in `state-card-gchart.html`
+* The height of the chart can be set in the `options` section in `googlechart.html`
 
 <p align="center">
 <img src="https://i.imgur.com/HlveuIS.jpg" height="350">
