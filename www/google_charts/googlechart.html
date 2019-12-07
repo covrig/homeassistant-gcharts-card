@@ -43,7 +43,7 @@
         const status = document.getElementById('status');
         google.charts.load('current', {'packages':['gauge', 'corechart', 'bar']});
         google.charts.setOnLoadCallback(drawChart);
-//-----------------
+
         $(document).ready(function() {
             // Add your HASS URL here
             ws = new WebSocket('wss://your_ip_or_url/api/websocket');
@@ -76,7 +76,7 @@
  
             };
         });
-//-----------------
+
         function render() {
           var error = false;
           _.forEach(json, function(graph, key) {
