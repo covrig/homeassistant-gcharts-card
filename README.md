@@ -31,27 +31,34 @@ _No need to restart hass every time you change an option. To test your changes j
         aspect_ratio: 90%
 ```
 **Main idea.**
-1. Add your entities as variables in the designated section.
+1. Add your entities as variables in the designated sections.
 ```javascript
        var router, fridge, laptop, boiler, tv, pc, oven, washer, other, monitor;
-       ...
- ```
+```
 ```javascript
        window.router = JSON.parse(event.data)["result"].filter(function (el) { return el.entity_id == "sensor.router_power"})[0].state;
        window.fridge = JSON.parse(event.data)["result"].filter(function (el) { return el.entity_id == "sensor.fridge_power"})[0].state;
        window.laptop = JSON.parse(event.data)["result"].filter(function (el) { return el.entity_id == "sensor.laptop_power"})[0].state;
        ...
  ```
- 2. Add/delete rows to/from your `data` array (mind the comma after the each row):
+ 2. Add/delete rows to/from the multiple sections (mind the ; after the each row):
  ```javascript
-       var data = google.visualization.arrayToDataTable([
-        ['Device', 'Power',{ role: 'annotation' },  { role: 'style' }],
-        ['PC', pc, pc, '#e31a1c'],
-        ['Oven', oven, oven, '#fdbf6f'],
-        ['Washer', washer, washer, '#ff7f00' ],
-        ['Other', other, other, '#cab2d6'],
+        //Set value
+        graph["data"].setValue(0, 1, router);
+        graph["data"].setValue(1, 1, fridge);
         ...
-      ]);
+ ```
+  ```javascript
+         //Set annotation
+         graph["data"].setValue(0, 2, router);
+         graph["data"].setValue(1, 2, fridge);
+         ...
+ ```
+  ```javascript
+         //Set name
+         graph["data"].setValue(0, 0, 'Router');
+         graph["data"].setValue(1, 0, 'Fridge');
+         ...
  ```
  3. Lots of options to change (a lot more can be added):
  ```javascript
@@ -77,15 +84,14 @@ _No need to restart hass every time you change an option. To test your changes j
       };
  ```
 ## How to add more then one chart
-* Duplicate `state-card-gchart.html`;
-* Change the name of `state-card-gchart.html` to `state-card-whateveryouwant.html`;
-* Inside `state-card-whateveryouwant.html` rename `state-card-gchart` to `state-card-whateveryouwant`(it appears to times);
-* Inside `state-card-whateveryouwant.html` rename `class Chart ...` to `class YourChoice ...` and `customElements.define(Chart.is, Chart);` (last row) to `customElements.define(YourChoice.is, YourChoice);`
-* Follow the same steps as for the first state chart (see above) using `state-card-whateveryouwant` instead of `state-card-gchart.html`;
-* Third chart... same steps.
+* Duplicate `googlechart.html`;
+* Change options inside new file;
+* Add new iframe in lovelace;
 
 ## Changelog
 ```
+2019.Dec.07
+- Removed old code and added webscoket version (works with HASS > 0.102) 
 2018.Feb.08:
 - [x] Some code cleaning. 
 - [x] Updated parseInt() to parseFloat().
