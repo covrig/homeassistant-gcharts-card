@@ -3,13 +3,9 @@
 <img align="left" src="https://i.imgur.com/XSTSlds.gif" height="350">
 
 ***
-KNOWN PROBLEMS: the code could be cleaner, the PieChart needs a bit more work, the more-info card is disabled with a trick, a bit tricky to add more than one chart ([details at the end of this page](https://github.com/covrig/homeassistant-gcharts-card/blob/master/README.md#how-to-add-more-then-one-chart))...
+KNOWN PROBLEMS: the code could be cleaner, the PieChart needs a bit more work...
 
-_No need to restart hass every time you change an option. To test your changes just clear your cache or use a new incongnito window (after each change).._
-
-I didn't create any config options under the `customize` section since the option list is extremly long.
-
-I will work in adding all chart types. Maybe others will contribute.
+_No need to restart hass every time you change an option. To test your changes just refresh the page - clear your cache or use a new incongnito window if no change is observed_
 ***
 
 
@@ -27,53 +23,24 @@ I will work in adding all chart types. Maybe others will contribute.
 </p>
 
 ## Installation
-* Download `/www/custom_ui/state-card-gchart.html` to `<your-hass-configuration-dir>/www/custom_ui/` (create the folder structure if you don't have it - mind the permissions)
-* Add it to your `configuration.yaml`:
+* Download `/www/custom_ui/googlechart.html` to `<your-hass-configuration-dir>/www/custom_ui/` (create the folder structure if you don't have it - mind the permissions)
+* Add it to your lovelace configuration e.g.:
 ```yaml
-frontend:
-  extra_html_url:
-    - /local/custom_ui/state-card-gchart.html
+      - type: iframe
+        url: /local/custom_ui/charts/googlechart.html
+        aspect_ratio: 90%
 ```
-* Create one or more sensors, binary_sensor(s), input_text(s) etc. in your `configuration.yaml`. E.g.:
-```yaml
-sensor:
-  - platform: template
-    sensors:
-      gchart:
-        value_template: gchart
-```
-* Add the sensor to your group or a new one.. E.g.:
-```yaml
-group:
-  group_gchart:
-    name: ' '   > in this format the chart will not have a name above (recommeded)
-    entities:
-      - sensor.gchart
-```
-or
-```
-  group_ghcart:
-    name: 'Name'   > with a name (large group name, not recommended)
-    entities:
-      - sensor.gchart
-```
-* Convert your newly created sensor to a Google chart in the `customize` section or your `customize.yaml` file:
-
-```yaml
-  customize:
-    sensor.gchart:
-      custom_ui_state_card: state-card-gchart
- ```
- * Customize even more your newly created sensor by edititing the `state-card-gchart.html` file (more comments in the file):
-
 **Main idea.**
 1. Add your entities as variables in the designated section.
-```
-      var pc = parseFloat(this.hass.states['sensor.pc_power'].state);         \\parseInt() is also an option
-      var oven = parseFloat(this.hass.states['sensor.oven_power'].state);
-      var washer = parseFloat(this.hass.states['sensor.washer_power'].state);
-      var other = parseFloat(this.hass.states['sensor.power_other'].state);
-      ...
+```javascript
+       var router, fridge, laptop, boiler, tv, pc, oven, washer, other, monitor;
+       ...
+ ```
+```javascript
+       window.router = JSON.parse(event.data)["result"].filter(function (el) { return el.entity_id == "sensor.router_power"})[0].state;
+       window.fridge = JSON.parse(event.data)["result"].filter(function (el) { return el.entity_id == "sensor.fridge_power"})[0].state;
+       window.laptop = JSON.parse(event.data)["result"].filter(function (el) { return el.entity_id == "sensor.laptop_power"})[0].state;
+       ...
  ```
  2. Add/delete rows to/from your `data` array (mind the comma after the each row):
  ```javascript
